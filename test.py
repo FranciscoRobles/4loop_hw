@@ -9,4 +9,4 @@ while True:
 	if(button.value()==1):
 		counter+=1
 		print counter
-		time.sleep(1)
+		time.sleep(0.5)
