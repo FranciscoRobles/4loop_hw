@@ -1,5 +1,5 @@
 import time
-import pypupm_grove as grove
+import pyupm_grove as grove
 
 button=grove.GroveButton(2)
 
