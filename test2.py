@@ -5,7 +5,8 @@ from firebase import firebase
 
 firebase=firebase.FirebaseApplication('https://4loop.firebaseIO.com',None)
 
-button=grove.GroveButton(2)
+button1=grove.GroveButton(2)
+button2=grove.GroveButton(6)
 
 counter=40
 
@@ -16,10 +17,17 @@ myLcd.setCursor(0,0)
 myLcd.write(str(counter))
 
 while True:
-	if(button.value()==1):
+	if(button1.value()==1):
 		counter-=1
+		myLcd.clear()
+		myLcd.write(str(counter))
 		firebase.put('/Counter',"count", counter) 
 		print counter
-		time.sleep(0.5)
-
-print 'yay'
+		time.sleep(0.1)
+	elif(button2.value()==1):
+		counter+=1
+		myLcd.clear()
+		myLcd.write(str(counter))
+		firebase.put('/Counter',"count",counter)
+		print counter
+		time.sleep(0.1)
