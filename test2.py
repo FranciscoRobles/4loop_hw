@@ -13,7 +13,7 @@ myLcd = lcd.Jhd1313m1(0, 0x3E, 0x62)
 
 myLcd.setCursor(0,0)
 
-myLcd.write(counter)
+myLcd.write(str(counter))
 
 while True:
 	if(button.value()==1):
