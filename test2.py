@@ -10,6 +10,8 @@ button2=grove.GroveButton(6)
 
 counter=40
 
+firebase.put('/Counter',"count",counter)
+
 myLcd = lcd.Jhd1313m1(0, 0x3E, 0x62)
 
 myLcd.setCursor(0,0)
