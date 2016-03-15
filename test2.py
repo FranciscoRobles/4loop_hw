@@ -2,6 +2,7 @@ import time
 import pyupm_grove as grove
 import pyupm_i2clcd as lcd
 from firebase import firebase
+import mraa
 
 firebase=firebase.FirebaseApplication('https://letsparkiot.firebaseIO.com',None)
 
@@ -21,7 +22,22 @@ myLcd.setCursor(0,0)
 
 myLcd.write(str(counter))
 
+
+led_disp=mraa.Gpio(7)
+led_disp.dir(mraa.DIR_OUT)
+
+led_not_disp=mraa.Gpio(3)
+led_not_disp.dir(mraa.DIR_OUT)
+
 while True:
+	if(counter>0):
+		#should be one to turn on, done like this to turn off 
+manually
+		led_disp.write(0)
+		led_not_disp.write(0)
+	else:
+		led_disp.write(0)
+		led_not_disp.write(0)
 	if(button1.value()==1):
 		if(counter>0):
 			counter-=1
