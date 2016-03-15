@@ -31,8 +31,6 @@ led_not_disp.dir(mraa.DIR_OUT)
 
 while True:
 	if(counter>0):
-		#should be one to turn on, done like this to turn off 
-manually
 		led_disp.write(0)
 		led_not_disp.write(0)
 	else:
