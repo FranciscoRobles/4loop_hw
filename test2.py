@@ -14,7 +14,7 @@ counter=20
 
 id_zone="A"
 
-firebase.put('/ITESM/General/'+id_zone,"Capacidad",counter)
+firebase.put('/ITESM/General/'+id_zone,"Capacity",counter)
 
 myLcd = lcd.Jhd1313m1(0, 0x3E, 0x62)
 
@@ -41,7 +41,7 @@ while True:
 			counter-=1
 			myLcd.clear()
 			myLcd.write(str(counter))
-			firebase.put('/ITESM/General/'+id_zone,"Capacidad",counter)
+			firebase.put('/ITESM/General/'+id_zone,"Capacity",counter)
 			print counter
 			time.sleep(0.1)
 	elif(button2.value()==1):
@@ -49,6 +49,6 @@ while True:
 			counter+=1
 			myLcd.clear()
 			myLcd.write(str(counter))
-			firebase.put('/ITESM/General/'+id_zone,"Capacidad",counter)
+			firebase.put('/ITESM/General/'+id_zone,"Capacity",counter)
 			print counter
 			time.sleep(0.1)
