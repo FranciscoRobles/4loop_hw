@@ -65,4 +65,5 @@ while True:
 			time.sleep(0.1)
 		else:
 			print "nel"
+			print original_count
 			time.sleep(0.1)
