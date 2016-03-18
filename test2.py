@@ -17,11 +17,11 @@ id_zone="A"
 res_json=firebase.get("/ITESM/General/"+id_zone+"/Capacity",None)
 
 counter=0
+original_count=0
 
 for x in res_json:
 	counter=int(res_json[x])
-
-original_count=counter
+	original_count=int(res_json[x])
 
 #firebase.put('/ITESM/General/'+id_zone,"Capacity",counter)
 
