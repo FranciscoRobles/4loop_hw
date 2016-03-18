@@ -49,7 +49,7 @@ while True:
 			counter-=1
 			myLcd.clear()
 			myLcd.write("Available : "+str(counter))
-			firebase.post('/ITESM/General/'+id_zone+"/Capacity",counter)
+			firebase.put('/ITESM/General/'+id_zone+"/Capacity",counter)
 			print counter
 			time.sleep(0.1)
 	elif(button2.value()==1):
