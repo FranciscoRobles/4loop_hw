@@ -16,11 +16,11 @@ id_zone="A"
 
 res_json=firebase.get("/ITESM/General/"+id_zone+"/Capacity",None)
 
-counter=0
-original_count=0
+counter=[0,0]
 
 for x in res_json:
-	counter=int(res_json[x])
+	counter[0]=int(res_json[x])
+	counter[1]=int(res_json)
 
 
 
@@ -40,29 +40,28 @@ led_not_disp=mraa.Gpio(3)
 led_not_disp.dir(mraa.DIR_OUT)
 
 while True:
-	if(counter>0):
+	if(counter[0]>0):
 		led_disp.write(1)
 		led_not_disp.write(0)
 	else:
 		led_disp.write(0)
 		led_not_disp.write(1)
 	if(button1.value()==1):
-		if(counter>0):
-			counter-=1
+		if(counter[0]>0):
+			counter[0]-=1
 			myLcd.clear()
 			myLcd.write("Available : "+str(counter))
 			firebase.put('/ITESM/General/'+id_zone+"/Capacity","Capacity",counter)
-			print counter
+			print counter[0]
 			time.sleep(0.1)
 	elif(button2.value()==1):
-		if(counter<original_count):
-			counter+=1
+		if(counter[0]<counter[1]):
+			counter[0]+=1
 			myLcd.clear()
 			myLcd.write("Available : "+str(counter))
 			firebase.put('/ITESM/General/'+id_zone+"/Capacity", "Capacity",counter)
-			print counter
+			print counter[0]
 			time.sleep(0.1)
 		else:
 			print "nel"
-			print original_count
 			time.sleep(0.1)
