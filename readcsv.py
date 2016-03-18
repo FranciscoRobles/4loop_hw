@@ -25,13 +25,12 @@ with open("OcupacionEstacionamientoIndividual.csv","r") as f:
 				i+=1
 			elif i==2:
 				#if letter in good_letters:
-					#line="/ITESM/General/"+letter+"/Slots/"+slot
-					#firebase.post(line,int(s))
+				line="/Parking/ITESM/General/"+letter+"/Slots/"
+				firebase.put(line,slot,int(s))
 				if s == "0":
 					capacities[letter]+=1
-					#firebase.post("/ITESM/General/"+letter+"/Capacity",capacities[letter])
 				i=0
 
-zones="A"
+zones="ABCDEFGHIJ"
 for s in zones:
-	firebase.post("/ITESM/General/"+s+"/Capacity",capacities[s])
+	firebase.put("/ITESM/General/"+s+"/","Capacity",capacities[s])
