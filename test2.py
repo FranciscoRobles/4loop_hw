@@ -45,7 +45,7 @@ while True:
 			counter[0]-=1
 			myLcd.clear()
 			myLcd.write("Available : "+str(counter[0]))
-			firebase.put('/Parking/ITESM/General/'+id_zone+"/","Capacity",counter)
+			firebase.put('/Parking/ITESM/General/'+id_zone+"/","Capacity",counter[0])
 			print counter[0]
 			time.sleep(0.1)
 	elif(button2.value()==1):
@@ -53,6 +53,6 @@ while True:
 			counter[0]+=1
 			myLcd.clear()
 			myLcd.write("Available : "+str(counter[0]))
-			firebase.put('/Parking/ITESM/General/'+id_zone+"/", "Capacity",counter)
+			firebase.put('/Parking/ITESM/General/'+id_zone+"/","Capacity",counter[0])
 			print counter[0]
 			time.sleep(0.1)
