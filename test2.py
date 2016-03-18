@@ -14,7 +14,7 @@ id_zone="A"
 
 #counter=int(firebase.get("/ITESM/General/"+id_zone+"/Capacity",None))
 
-res_json=firebase.get("/ITESM/General/"+id_zone+"/Capacity",None)
+res_json=firebase.get("/Parking/ITESM/General/"+id_zone+"/Capacity",None)
 
 counter=[0,0]
 
@@ -51,7 +51,7 @@ while True:
 			counter[0]-=1
 			myLcd.clear()
 			myLcd.write("Available : "+str(counter))
-			firebase.put('/ITESM/General/'+id_zone+"/Capacity","Capacity",counter)
+			firebase.put('/Parking/ITESM/General/'+id_zone+"/Capacity","Capacity",counter)
 			print counter[0]
 			time.sleep(0.1)
 	elif(button2.value()==1):
@@ -59,7 +59,7 @@ while True:
 			counter[0]+=1
 			myLcd.clear()
 			myLcd.write("Available : "+str(counter))
-			firebase.put('/ITESM/General/'+id_zone+"/Capacity", "Capacity",counter)
+			firebase.put('/Parking/ITESM/General/'+id_zone+"/Capacity", "Capacity",counter)
 			print counter[0]
 			time.sleep(0.1)
 		else:
