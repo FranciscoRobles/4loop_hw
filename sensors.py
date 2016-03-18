@@ -49,7 +49,7 @@ while True:
 			print counter[0]
 			time.sleep(0.1)
 	elif(button2.value()==1):
-		if(counter[0]<counter[1]):
+		if(counter[0]<counter[1] or counter[1]==0):
 			counter[0]+=1
 			myLcd.clear()
 			myLcd.write("Available : "+str(counter[0]))
