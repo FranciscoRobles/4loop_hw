@@ -14,7 +14,7 @@ id_zone="A"
 
 #counter=int(firebase.get("/ITESM/General/"+id_zone+"/Capacity",None))
 
-res_json=firebase.get("/ITESM/General/"+id_zone+"Capacity",None)
+res_json=firebase.get("/ITESM/General/"+id_zone+"/Capacity",None)
 
 counter=0
 
