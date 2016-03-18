@@ -21,6 +21,7 @@ counter=0
 for x in res_json:
 	counter=int(res_json[x])
 
+original_count=counter
 
 #firebase.put('/ITESM/General/'+id_zone,"Capacity",counter)
 
@@ -54,7 +55,7 @@ while True:
 			print counter
 			time.sleep(0.1)
 	elif(button2.value()==1):
-		if(counter<20):
+		if(counter<original_count):
 			counter+=1
 			myLcd.clear()
 			myLcd.write("Available : "+str(counter))
