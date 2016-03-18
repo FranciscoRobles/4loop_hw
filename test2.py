@@ -49,7 +49,7 @@ while True:
 			counter-=1
 			myLcd.clear()
 			myLcd.write("Available : "+str(counter))
-			firebase.delete('/ITESM/General/'+id_zone+"/Capacity",counter)
+			firebase.delete('/ITESM/General/'+id_zone+"/Capacity",None)
 			firebase.post('/ITESM/General/'+id_zone+"/Capacity",counter)
 			print counter
 			time.sleep(0.1)
