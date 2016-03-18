@@ -10,9 +10,9 @@ button1=grove.GroveButton(2)
 button2=grove.GroveButton(6)
 
 
-counter=20
-
 id_zone="A"
+
+counter=int(firebase.get("/ITESM/General/"+id_zone+"/Capacity",None))
 
 firebase.put('/ITESM/General/'+id_zone,"Capacity",counter)
 
