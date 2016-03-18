@@ -12,7 +12,15 @@ button2=grove.GroveButton(6)
 
 id_zone="A"
 
-counter=int(firebase.get("/ITESM/General/"+id_zone+"/Capacity",None))
+#counter=int(firebase.get("/ITESM/General/"+id_zone+"/Capacity",None))
+
+res_json=firebase.get("/ITESM/General/"+id_zone+"Capacity",None)
+
+counter=0
+
+for x in res_json:
+	counter=int(res_json[x])
+
 
 firebase.put('/ITESM/General/'+id_zone,"Capacity",counter)
 
