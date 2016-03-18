@@ -22,7 +22,7 @@ for x in res_json:
 	counter=int(res_json[x])
 
 
-firebase.put('/ITESM/General/'+id_zone,"Capacity",counter)
+#firebase.put('/ITESM/General/'+id_zone,"Capacity",counter)
 
 myLcd = lcd.Jhd1313m1(0, 0x3E, 0x62)
 
@@ -49,7 +49,7 @@ while True:
 			counter-=1
 			myLcd.clear()
 			myLcd.write("Available"+str(counter))
-			firebase.put('/ITESM/General/'+id_zone,"Capacity",counter)
+			firebase.post('/ITESM/General/'+id_zone,"Capacity",counter)
 			print counter
 			time.sleep(0.1)
 	elif(button2.value()==1):
@@ -57,6 +57,6 @@ while True:
 			counter+=1
 			myLcd.clear()
 			myLcd.write("Available"+str(counter))
-			firebase.put('/ITESM/General/'+id_zone,"Capacity",counter)
+			firebase.post('/ITESM/General/'+id_zone,"Capacity",counter)
 			print counter
 			time.sleep(0.1)

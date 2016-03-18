@@ -32,6 +32,6 @@ with open("OcupacionEstacionamientoIndividual.csv","r") as f:
 					#firebase.post("/ITESM/General/"+letter+"/Capacity",capacities[letter])
 				i=0
 
-zones="ABCDEFGHIJ"
+zones="A"
 for s in zones:
 	firebase.post("/ITESM/General/"+s+"/Capacity",capacities[s])
