@@ -1,4 +1,4 @@
-"""This file is part of Asphalt
+/*This file is part of Asphalt
   Asphalt is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -10,7 +10,7 @@
     You should have received a copy of the GNU General Public License
     along with Asphalt.  If not, see <http://www.gnu.org/licenses/>.
 
-Copyright © 2016 4Loop """
+Copyright © 2016 4Loop */
 
 #include "opencv2/objdetect.hpp"
 #include "opencv2/videoio.hpp"
