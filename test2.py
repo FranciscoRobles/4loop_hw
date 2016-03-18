@@ -63,3 +63,6 @@ while True:
 			firebase.post('/ITESM/General/'+id_zone+"/Capacity",counter)
 			print counter
 			time.sleep(0.1)
+		else:
+			print "nel"
+			time.sleep(0.1)
