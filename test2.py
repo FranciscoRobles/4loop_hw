@@ -20,7 +20,7 @@ counter=[0,0]
 
 for x in res_json:
 	counter[0]=int(res_json[x])
-	counter[1]=int(res_json)
+	counter[1]=int(res_json[x])
 
 
 
