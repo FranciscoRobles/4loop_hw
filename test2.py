@@ -21,7 +21,8 @@ original_count=0
 
 for x in res_json:
 	counter=int(res_json[x])
-	original_count=int(res_json[x])
+
+
 
 #firebase.put('/ITESM/General/'+id_zone,"Capacity",counter)
 
@@ -50,8 +51,7 @@ while True:
 			counter-=1
 			myLcd.clear()
 			myLcd.write("Available : "+str(counter))
-			firebase.delete('/ITESM/General/'+id_zone+"/Capacity",None)
-			firebase.post('/ITESM/General/'+id_zone+"/Capacity",counter)
+			firebase.put('/ITESM/General/'+id_zone+"/Capacity","Capacity",counter)
 			print counter
 			time.sleep(0.1)
 	elif(button2.value()==1):
@@ -59,8 +59,7 @@ while True:
 			counter+=1
 			myLcd.clear()
 			myLcd.write("Available : "+str(counter))
-			firebase.delete('/ITESM/General/'+id_zone+"/Capacity",None)
-			firebase.post('/ITESM/General/'+id_zone+"/Capacity",counter)
+			firebase.put('/ITESM/General/'+id_zone+"/Capacity", "Capacity",counter)
 			print counter
 			time.sleep(0.1)
 		else:
