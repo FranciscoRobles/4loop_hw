@@ -28,7 +28,7 @@ myLcd = lcd.Jhd1313m1(0, 0x3E, 0x62)
 
 myLcd.setCursor(0,0)
 
-myLcd.write("Available"+str(counter))
+myLcd.write("Available : "+str(counter))
 
 
 led_disp=mraa.Gpio(7)
@@ -48,15 +48,15 @@ while True:
 		if(counter>0):
 			counter-=1
 			myLcd.clear()
-			myLcd.write("Available"+str(counter))
-			firebase.post('/ITESM/General/'+id_zone,"Capacity",counter)
+			myLcd.write("Available : "+str(counter))
+			firebase.post('/ITESM/General/'+id_zone+"/Capacity",counter)
 			print counter
 			time.sleep(0.1)
 	elif(button2.value()==1):
 		if(counter<20):
 			counter+=1
 			myLcd.clear()
-			myLcd.write("Available"+str(counter))
-			firebase.post('/ITESM/General/'+id_zone,"Capacity",counter)
+			myLcd.write("Available : "+str(counter))
+			firebase.post('/ITESM/General/'+id_zone+"/Capacity",counter)
 			print counter
 			time.sleep(0.1)
