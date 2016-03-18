@@ -14,6 +14,8 @@ id_zone="A"
 
 #counter=int(firebase.get("/ITESM/General/"+id_zone+"/Capacity",None))
 
+counter=[0,0]
+
 counter[0]=counter[1]=firebase.get("/Parking/ITESM/General/"+id_zone+"/Capacity",None)
 
 
