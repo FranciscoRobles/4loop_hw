@@ -18,7 +18,6 @@ counter=[0,0]
 
 counter[0]=counter[1]=firebase.get("/Parking/ITESM/General/"+id_zone+"/Capacity",None)
 
-
 #firebase.put('/ITESM/General/'+id_zone,"Capacity",counter)
 
 myLcd = lcd.Jhd1313m1(0, 0x3E, 0x62)
@@ -56,8 +55,4 @@ while True:
 			myLcd.write("Available : "+str(counter[0]))
 			firebase.put('/Parking/ITESM/General/'+id_zone+"/", "Capacity",counter)
 			print counter[0]
-			time.sleep(0.1)
-		else:
-			print "nel"
-			print counter[0]+" "+counter[1]
 			time.sleep(0.1)
